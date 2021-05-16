@@ -45,7 +45,6 @@ const Card = (article) => {
   myCard.addEventListener('click', () => console.log(article.headline));
 
   return myCard
-
 }
 
 const cardAppender = (selector) => {
@@ -63,7 +62,7 @@ const cardAppender = (selector) => {
     const myArt = res.data.articles;
     for(const topic in myArt) {
       myArt[topic].forEach(t => cardContent.appendChild(Card(t)))
-      
+
       console.log(myArt[topic]);
     }
   })

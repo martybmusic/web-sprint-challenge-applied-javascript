@@ -29,7 +29,6 @@ const Header = (title, date, temp) => {
   myHeader.appendChild(myTemp);
 
   return myHeader
-
 }
 
 const headerAppender = (selector) => {
