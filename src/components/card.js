@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,6 +19,33 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const myCard = document.createElement('div');
+  const myHeadline = document.createElement('div');
+  const myAuthor = document.createElement('div');
+  const myCntnr = document.createElement('div');
+  const myImg = document.createElement('img');
+  const myName = document.createElement('span');
+
+  myCard.classList.add('card');
+  myHeadline.classList.add('headline');
+  myAuthor.classList.add('author');
+  myCntnr.classList.add('img-container');
+
+  myCard.appendChild(myHeadline);
+  myCard.appendChild(myAuthor);
+  myAuthor.appendChild(myCntnr);
+  myCntnr.appendChild(myImg);
+  myAuthor.appendChild(myName);
+
+  myImg.src = article.authorPhoto;
+
+  myHeadline.textContent = article.headline;
+  myName.textContent = article.authorName;
+
+  myCard.addEventListener('click', () => console.log(article.headline));
+
+  return myCard
+
 }
 
 const cardAppender = (selector) => {
